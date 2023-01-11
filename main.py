@@ -7,12 +7,6 @@ st.write("""
 # Cricket Player's Average Forecasting App
 """)
 
-option = st.selectbox(
-    'Select a Player',
-    ('Virat Kohli', 'Rhot Sharma'))
-
-st.write('You selected:', option)
-
 data = pd.read_csv("Virat Kohli - One Day Internationals - Performance Analysis by Year - Sheet1.csv")
 
 st.write("""
@@ -67,3 +61,7 @@ st.write("""
 """)
 avg = np.exp(forecast_data.iloc[-1]['yhat'])
 st.write(np.exp(forecast_data.iloc[-1]['yhat']))
+
+# Player score for next 20 ODI matches
+score_20 = round(avg*20)
+st.write('Virat Kohli will score ', score_20, ' runs in next 20 ODI matches' )
